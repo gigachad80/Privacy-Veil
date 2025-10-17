@@ -213,7 +213,8 @@ EXTENSION CONTEXT (Trusted)
 
 ### ⚡ Quick Install
 
-Install addon from here : 
+Install addon from here : https://addons.mozilla.org/en-US/firefox/addon/privacy-veil/
+🥰
 
 ---
 
