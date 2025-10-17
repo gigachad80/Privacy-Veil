@@ -402,8 +402,8 @@ I created **PrivacyVeil** - a dark mode extension that:
 Licensed under the **MIT License**.  
 See [`LICENSE.md`](LICENSE.md) for details.
 
-**First Published**: October 09, 2025  
-**Last Updated**: October 09, 2025  
+**First Published**: October 17, 2025  
+**Last Updated**: October 17, 2025  
 **Version**: 1.0.0  
 **Status**: ✅ Published on Firefox Add-ons Store
 
