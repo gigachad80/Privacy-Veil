@@ -1,0 +1,254 @@
+/* PrivacyVeil Dark Mode - SENIOR DEVELOPER FIX
+   - Fixed search bar overlap and transparency issue
+   - Implements proper z-index stacking, solid backgrounds, and content spacing
+   - Revised by Gemini to be more robust for complex sites like Google
+*/
+
+:root {
+  --dm-bg: #1a1a1e;
+  /* Slightly bluer dark */
+  --dm-bg-alt: #2c2c32;
+  /* Lighter background for UI elements */
+  --dm-text: #e8e6e3;
+  --dm-text-dim: #b8b8b8;
+  --dm-border: #4a4a52;
+  --dm-link: #58a6ff;
+  --dm-link-visited: #8e96f0;
+  --dm-header-bg: #0d0d0f;
+  /* Darkest for header */
+  --dm-z-header: 9999;
+  /* High z-index for headers/search */
+  --dm-z-modal: 10001;
+  /* Higher for modals and critical popups */
+}
+
+/* ============================================
+   CORE DARK MODE ACTIVATION
+   ============================================ */
+
+html[data-dark-mode="true"] {
+  background-color: var(--dm-bg) !important;
+  color-scheme: dark;
+}
+
+html[data-dark-mode="true"] body {
+  background-color: var(--dm-bg) !important;
+  color: var(--dm-text) !important;
+}
+
+/* ============================================
+   SEARCH BAR & HEADER FIX (CRITICAL)
+   ============================================ */
+
+html[data-dark-mode="true"] [role="search"],
+html[data-dark-mode="true"] header,
+html[data-dark-mode="true"] nav,
+html[data-dark-mode="true"] [class*="header"],
+html[data-dark-mode="true"] [class*="search"],
+html[data-dark-mode="true"] [class*="navbar"],
+html[data-dark-mode="true"] [class*="topbar"] {
+  background-color: var(--dm-header-bg) !important;
+  color: var(--dm-text) !important;
+  border-color: var(--dm-border) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  z-index: var(--dm-z-header) !important;
+  position: relative !important;
+}
+
+/* ============================================
+   INPUT/SEARCH FIELD SPECIFIC
+   ============================================ */
+
+html[data-dark-mode="true"] input[type="search"],
+html[data-dark-mode="true"] input[type="text"],
+html[data-dark-mode="true"] [role="searchbox"],
+html[data-dark-mode="true"] [class*="search-input"],
+html[data-dark-mode="true"] [class*="search-box"] {
+  background-color: var(--dm-bg-alt) !important;
+  color: var(--dm-text) !important;
+  border-color: var(--dm-border) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+html[data-dark-mode="true"] input::placeholder,
+html[data-dark-mode="true"] [class*="search"] input::placeholder {
+  color: var(--dm-text-dim) !important;
+  opacity: 1 !important;
+}
+
+/* ============================================
+   SUGGESTION DROPDOWN FIX (REVISED)
+   Ensures dropdowns are fully opaque, properly layered, and have clear visual separation.
+   ============================================ */
+html[data-dark-mode="true"] [role="listbox"],
+html[data-dark-mode="true"] [class*="suggestions"],
+html[data-dark-mode="true"] [class*="dropdown"],
+html[data-dark-mode="true"] [class*="autocomplete"],
+html[data-dark-mode="true"] [class*="menu"] {
+  /* CRITICAL: Override background completely, not just color */
+  background: var(--dm-bg-alt) !important;
+  color: var(--dm-text) !important;
+  border: 1px solid var(--dm-border) !important;
+  border-radius: 8px !important;
+  /* Rounded corners for modern look */
+
+  /* Lift the element off the page */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
+
+  /* Ensure it's on top of everything but modals */
+  z-index: var(--dm-z-modal) !important;
+
+  /* Disable transparency effects */
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  opacity: 1 !important;
+}
+
+html[data-dark-mode="true"] [role="listbox"] [role="option"],
+html[data-dark-mode="true"] [class*="suggestion-item"],
+html[data-dark-mode="true"] [class*="menu-item"],
+html[data-dark-mode="true"] [class*="dropdown-item"] {
+  /* Items should be transparent against the new solid container background */
+  background-color: transparent !important;
+  color: var(--dm-text) !important;
+  border: none !important;
+  border-bottom: 1px solid var(--dm-border) !important;
+  /* Separator line */
+}
+
+html[data-dark-mode="true"] [role="listbox"] [role="option"]:last-child,
+html[data-dark-mode="true"] [class*="suggestion-item"]:last-child {
+  border-bottom: none !important;
+}
+
+html[data-dark-mode="true"] [role="option"][aria-selected="true"],
+html[data-dark-mode="true"] [role="option"]:hover,
+html[data-dark-mode="true"] [class*="suggestion-item"]:hover,
+html[data-dark-mode="true"] [class*="menu-item"]:hover {
+  background-color: var(--dm-link) !important;
+  color: #ffffff !important;
+  /* Bright text on hover */
+}
+
+/* ============================================
+   CONTENT SPACING (PREVENT OVERLAP)
+   ============================================ */
+
+html[data-dark-mode="true"] body {
+  padding-top: 0 !important;
+}
+
+html[data-dark-mode="true"] main,
+html[data-dark-mode="true"] [role="main"],
+html[data-dark-mode="true"] [class*="content"],
+html[data-dark-mode="true"] [class*="container"] {
+  margin-top: auto !important;
+  position: relative !important;
+  z-index: 1 !important;
+  /* Content below header */
+}
+
+/* ============================================
+   GENERAL ELEMENTS & TYPOGRAPHY
+   ============================================ */
+
+html[data-dark-mode="true"] h1,
+html[data-dark-mode="true"] h2,
+html[data-dark-mode="true"] h3,
+html[data-dark-mode="true"] h4,
+html[data-dark-mode="true"] h5,
+html[data-dark-mode="true"] h6,
+html[data-dark-mode="true"] p,
+html[data-dark-mode="true"] span,
+html[data-dark-mode="true"] div,
+html[data-dark-mode="true"] li,
+html[data-dark-mode="true"] td,
+html[data-dark-mode="true"] th,
+html[data-dark-mode="true"] a,
+html[data-dark-mode="true"] label {
+  color: var(--dm-text) !important;
+  background-color: transparent !important;
+}
+
+html[data-dark-mode="true"] a {
+  color: var(--dm-link) !important;
+}
+
+html[data-dark-mode="true"] a:visited {
+  color: var(--dm-link-visited) !important;
+}
+
+html[data-dark-mode="true"] a:hover {
+  text-decoration: underline !important;
+}
+
+/* ============================================
+   DISABLE EFFECTS THAT CAUSE READABILITY ISSUES (REVISED)
+   ============================================ */
+
+html[data-dark-mode="true"] * {
+  text-shadow: none !important;
+  /* REMOVED: box-shadow: none !important; This was the likely cause of the issue. */
+}
+
+html[data-dark-mode="true"] [class*="shadow"],
+html[data-dark-mode="true"] [class*="elevation"] {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+  background-color: var(--dm-bg-alt) !important;
+}
+
+/* ============================================
+   IMAGES & MEDIA
+   ============================================ */
+
+html[data-dark-mode="true"] img:not([src*=".svg"]) {
+  filter: brightness(0.9) contrast(0.9);
+  opacity: 0.95 !important;
+}
+
+html[data-dark-mode="true"] img[src*="logo"],
+html[data-dark-mode="true"] img[class*="logo"],
+html[data-dark-mode="true"] svg {
+  filter: none !important;
+  opacity: 1 !important;
+}
+
+/* ============================================
+   MODALS & OVERLAYS (HIGHEST Z-INDEX)
+   ============================================ */
+
+html[data-dark-mode="true"] [role="dialog"],
+html[data-dark-mode="true"] [class*="modal"],
+html[data-dark-mode="true"] [class*="popup"],
+html[data-dark-mode="true"] [class*="overlay"] {
+  background-color: var(--dm-header-bg) !important;
+  color: var(--dm-text) !important;
+  z-index: var(--dm-z-modal) !important;
+  backdrop-filter: blur(4px) !important;
+  -webkit-backdrop-filter: blur(4px) !important;
+  border: 1px solid var(--dm-border) !important;
+}
+
+/* ============================================
+   SCROLLBARS
+   ============================================ */
+
+html[data-dark-mode="true"]::-webkit-scrollbar {
+  width: 12px;
+}
+
+html[data-dark-mode="true"]::-webkit-scrollbar-track {
+  background-color: var(--dm-bg-alt) !important;
+}
+
+html[data-dark-mode="true"]::-webkit-scrollbar-thumb {
+  background-color: var(--dm-border) !important;
+  border-radius: 6px;
+  border: 3px solid var(--dm-bg-alt);
+}
+
+html[data-dark-mode="true"]::-webkit-scrollbar-thumb:hover {
+  background-color: var(--dm-link) !important;
+}
