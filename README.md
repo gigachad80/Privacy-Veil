@@ -83,10 +83,10 @@ PrivacyVeil is a dark mode extension engineered specifically for privacy-conscio
 ### 🏗️ Architecture & How It Works
 
 
-eeyeyyr
+
 #### System Architecture Diagram
 
----PNG
+<img width="1990" height="2632" alt="Untitled diagram-2025-10-17-062701" src="https://github.com/user-attachments/assets/36db3e8c-1cc1-4ddd-ab0f-92e4f5f5a84b" />
 
 #### How It Works - Step by Step
 
@@ -148,7 +148,8 @@ Debounced to prevent performance issues
 
 #### Data Flow Diagram
 
----------PNG
+
+<img width="1960" height="2632" alt="Untitled diagram-2025-10-17-063032" src="https://github.com/user-attachments/assets/ed6b03ad-6c7e-45a6-b327-46638256020c" />
 
 #### Security Architecture
 
@@ -176,7 +177,8 @@ EXTENSION CONTEXT (Trusted)
 
 #### Z-Index Layer Stack
 
------PNG
+
+<img width="2892" height="440" alt="Untitled diagram-2025-10-17-065950" src="https://github.com/user-attachments/assets/e8da6e3e-e21d-4f6f-b06b-a511f32447c2" />
 
 
 ### ⚙️ Browser Compatibility
