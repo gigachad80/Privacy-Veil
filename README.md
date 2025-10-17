@@ -149,7 +149,7 @@ Debounced to prevent performance issues
 #### Data Flow Diagram
 
 
-<img width="1960" height="2632" alt="Untitled diagram-2025-10-17-063032" src="https://github.com/user-attachments/assets/ed6b03ad-6c7e-45a6-b327-46638256020c" />
+<img width="600" height="2632" alt="Untitled diagram-2025-10-17-063032" src="https://github.com/user-attachments/assets/ed6b03ad-6c7e-45a6-b327-46638256020c" />
 
 #### Security Architecture
 
