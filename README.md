@@ -364,7 +364,7 @@ The name captures the essence: **Privacy Protection + Dark Mode** working togeth
   - Versioning issues also occurred.
 - **README Writing:** 31 mins
 - **Mermaid.js Diagram Creation:** 1 hr  
-  _I wasn't familiar with Mermaid.js syntax, so extra time was needed to learn and implement it._
+  _I wasn't familiar with Mermaid.js syntax, so extra time was needed to vibe code the mermaid js diagram._
 
 ---
 
