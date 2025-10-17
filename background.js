@@ -1,4 +1,4 @@
-// Minimal Dark Mode - Background Service Worker/Script
+// Privacy Veil - Background Service Worker/Script
 // Compatible with both Manifest V3 (service_worker) and MV2 (scripts)
 // Security principles:
 // 1. No external network requests
