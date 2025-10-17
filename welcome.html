@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Privacy Veil</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e8e6e3;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            background: #2d2d2d;
+            border-radius: 16px;
+            padding: 48px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            color: #b8b8b8;
+            font-size: 18px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .feature {
+            background: #1a1a1a;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #404040;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .feature p {
+            color: #b8b8b8;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .security-notice {
+            background: #1f3a1f;
+            border: 2px solid #2f5a2f;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .security-notice h2 {
+            color: #6bff6b;
+            font-size: 24px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .security-list {
+            list-style: none;
+            display: grid;
+            gap: 12px;
+        }
+
+        .security-list li {
+            display: flex;
+            align-items: start;
+            gap: 12px;
+            color: #b8ffb8;
+        }
+
+        .security-list li:before {
+            content: "✓";
+            color: #6bff6b;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .getting-started {
+            background: #1a1a1a;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #404040;
+            margin-bottom: 32px;
+        }
+
+        .getting-started h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps li {
+            counter-increment: step-counter;
+            padding-left: 40px;
+            position: relative;
+            margin-bottom: 16px;
+            color: #b8b8b8;
+            line-height: 1.6;
+        }
+
+        .steps li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: center;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-top: 32px;
+        }
+
+        .comparison {
+            background: #1a1a1a;
+            padding: 24px;
+            border-radius: 12px;
+            border: 1px solid #404040;
+            margin-bottom: 32px;
+        }
+
+        .comparison h2 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            color: #fff;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #404040;
+        }
+
+        .comparison-table th {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            color: #b8b8b8;
+        }
+
+        .yes {
+            color: #6bff6b;
+        }
+
+        .no {
+            color: #ff6b6b;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="icon">🌙</div>
+            <h1>Welcome to Privacy Veil</h1>
+            <p class="subtitle">Privacy-focused dark mode for LibreWolf & Firefox</p>
+        </div>
+
+        <div class="security-notice">
+            <h2>🔒 Your Privacy is Protected</h2>
+            <ul class="security-list">
+                <li><strong>Zero data collection</strong> - Nothing leaves your browser</li>
+                <li><strong>No external connections</strong> - Completely offline operation</li>
+                <li><strong>Minimal permissions</strong> - Only what's absolutely necessary</li>
+                <li><strong>Open source</strong> - Fully auditable code</li>
+                <li><strong>RFP compatible</strong> - Works with ResistFingerprinting</li>
+            </ul>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Lightweight</h3>
+                <p>Minimal CPU and memory usage. Just ~500 lines of code, no bloat.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🎨</div>
+                <h3>Customizable</h3>
+                <p>Adjust brightness and exclude specific sites you don't want themed.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🚀</div>
+                <h3>Fast & Simple</h3>
+                <p>Works instantly on page load with zero configuration needed.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3>Secure</h3>
+                <p>Designed specifically for security-conscious LibreWolf users.</p>
+            </div>
+        </div>
+
+        <div class="getting-started">
+            <h2>Getting Started</h2>
+            <ol class="steps">
+                <li>Click the extension icon in your toolbar to open the control panel</li>
+                <li>Toggle dark mode on/off and adjust brightness to your preference</li>
+                <li>Visit any website - dark mode is automatically applied</li>
+                <li>If a site looks broken, click "Exclude Current Site" in the popup</li>
+                <li>Right-click on any page for quick access to exclusion options</li>
+            </ol>
+        </div>
+
+        <div class="comparison">
+            <h2>Why Choose Privacy Veil?</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Feature</th>
+                        <th>Privacy Veil</th>
+                        <th>Dark Reader</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Privacy focused</td>
+                        <td class="yes">✓ Zero tracking</td>
+                        <td class="no">Unknown</td>
+                    </tr>
+                    <tr>
+                        <td>Permissions</td>
+                        <td class="yes">✓ Minimal</td>
+                        <td class="no">Broad access</td>
+                    </tr>
+                    <tr>
+                        <td>Code size</td>
+                        <td class="yes">✓ ~500 lines</td>
+                        <td class="no">50,000+ lines</td>
+                    </tr>
+                    <tr>
+                        <td>RFP compatible</td>
+                        <td class="yes">✓ Yes</td>
+                        <td class="no">Conflicts</td>
+                    </tr>
+                    <tr>
+                        <td>Open source</td>
+                        <td class="yes">✓ Auditable</td>
+                        <td class="yes">✓ Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div style="text-align: center;">
+            <a href="#" class="cta-button" onclick="window.close(); return false;">Start Using Dark Mode</a>
+        </div>
+
+        <div class="footer">
+            Made with ❤️ for privacy-conscious users<br>
+            No tracking • No analytics • No compromises
+        </div>
+    </div>
+</body>
+
+</html>
