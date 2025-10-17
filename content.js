@@ -1,4 +1,4 @@
-// Minimal Dark Mode - Privacy-focused content script
+// Privacy Veil - Privacy-focused content script
 // Compatible with both Manifest V2 and V3
 // Security considerations:
 // 1. No tracking or analytics
@@ -51,7 +51,7 @@
             });
             return result;
         } catch (e) {
-            console.error('[Minimal Dark Mode] Storage error:', e);
+            console.error('[Privacy Veil] Storage error:', e);
             return { enabled: true, brightness: 90, excludedSites: [] };
         }
     }
